@@ -53,6 +53,7 @@ func TestCustomRoundTripper(t *testing.T) {
 	myProxyTripper := MyProxyTripper{
 		tr: http.DefaultTransport,
 	}
+
 	httpAddTransport, err := httpaddtransport.New(&myProxyTripper, log.Default())
 	if err != nil {
 		t.Fatal(err)
