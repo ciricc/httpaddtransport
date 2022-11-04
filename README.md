@@ -12,10 +12,10 @@ import (
 
 func main() {
     httpAddTransport, err := httpaddtransport.New(nil, nil)
-    
+
     if err != nil {
-		panic(err)
-	}
+        panic(err)
+    }
 
     httpAddTransport.Headers.Set("User-Agent", "go/1.19")
     httpAddTransport.Log = true
@@ -24,9 +24,9 @@ func main() {
         Transport: httpAddTransport
     }
 
-	_, err = httpClient.Get("https://google.com/")
-	if err != nil {
-		panic(err)
-	}
+    _, err = httpClient.Get("https://google.com/")
+    if err != nil {
+        panic(err)
+    }
 }
 ```
